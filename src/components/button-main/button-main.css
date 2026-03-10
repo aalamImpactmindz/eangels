@@ -1,0 +1,7 @@
+.button-main {
+    opacity: 1;
+}
+
+.button-main:hover {
+    box-shadow: 0 4px 26px rgba(231, 189, 0, 0.6);
+}

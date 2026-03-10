@@ -1,0 +1,50 @@
+.button-animated {
+    transition: var(--transition-common);
+}
+
+.button-animated::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1/1;
+    width: 150%;
+    height: auto;
+    border-radius: 50%;
+    background: conic-gradient(#dca311 0%, #000 10%, #000 80%, #dca311 100%);
+    animation: spin linear 3s infinite;
+    transform: translate(-50%, -50%);
+}
+
+.button-animated::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-color: var(--color-dark);
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    backdrop-filter: blur(10vh);
+    transition: var(--transition-common);
+}
+
+.button-animated:hover::before {
+    display: none;
+}
+
+.button-animated:hover,
+.button-animated:hover::after {
+    background-color: var(--color-primary);
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
